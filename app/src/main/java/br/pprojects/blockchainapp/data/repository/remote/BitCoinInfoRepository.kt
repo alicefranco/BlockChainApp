@@ -8,7 +8,6 @@ import br.pprojects.blockchainapp.data.network.ApiService
 import br.pprojects.blockchainapp.utils.result
 import br.pprojects.blockchainapp.utils.safeCall
 import org.koin.core.KoinComponent
-import retrofit2.Call
 
 interface BitCoinInfoRepository {
     suspend fun listXYChartInfo(timespan: String, start: String? = ""): ResultAPI<ChartResponse>

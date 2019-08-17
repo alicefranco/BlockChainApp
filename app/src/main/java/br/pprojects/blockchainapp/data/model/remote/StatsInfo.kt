@@ -24,5 +24,5 @@ data class StatsInfo (
     @SerializedName("total_btc_sent") var totalBtcFees: BigDecimal?,
     @SerializedName("trade_volume_btc") var tradeVolumeBtc: BigDecimal?,
     @SerializedName("trade_volume_usd") var tradeVolumeUsd: BigDecimal?,
-    @SerializedName("timestamp") var timestamp: BigDecimal?
+    @SerializedName("timestamp") var timestamp: Long?
 )

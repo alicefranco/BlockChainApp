@@ -15,7 +15,7 @@ import java.io.IOException
 
 fun <T : Any> Response<T>.result(): ResultAPI<T> {
     if (this.isSuccessful) {
-        if (this.code() == 200) {
+        if (this.code() == 204) {
             return ResultAPI.SuccessNoBody("Success")
         }
         this.body()?.let {
