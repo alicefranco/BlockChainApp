@@ -10,6 +10,9 @@ buildscript {
         coroutines_version = '1.0.1'
         androidx_core_version = '1.0.2'
         okhttp_logging_version = '4.1.0'
+        appcompat_version = '1.0.0'
+        graphview_version = '4.2.2'
+        ktlint_version = '0.29.0'
     }
     repositories {
         google()

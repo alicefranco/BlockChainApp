@@ -46,8 +46,11 @@ task ktlintFormat(type: JavaExec, group: "formatting") {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.cardview:cardview:$appcompat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -66,5 +69,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
 
-    ktlint "com.github.shyiko:ktlint:0.29.0"
+    implementation "com.jjoe64:graphview:$graphview_version"
+
+    ktlint "com.github.shyiko:ktlint:$ktlint_version"
+
 }
