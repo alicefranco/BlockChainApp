@@ -1,10 +1,16 @@
 package br.pprojects.blockchainapp.data.model.remote
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.math.BigDecimal
 import java.sql.Timestamp
 
+@Entity
 data class StatsInfo (
+    @PrimaryKey @ColumnInfo(name = "timestamp")
+    @SerializedName("timestamp") var timestamp: Long?,
     @SerializedName("market_price_usd") var marketPriceUsd: BigDecimal?,
     @SerializedName("hash_rate") var hashRate: BigDecimal?,
     @SerializedName("total_fees_btc") var totalFeesBtc: BigDecimal?,
@@ -23,6 +29,5 @@ data class StatsInfo (
     @SerializedName("miners_revenue_btc") var minersRevenueBtc: BigDecimal?,
     @SerializedName("total_btc_sent") var totalBtcFees: BigDecimal?,
     @SerializedName("trade_volume_btc") var tradeVolumeBtc: BigDecimal?,
-    @SerializedName("trade_volume_usd") var tradeVolumeUsd: BigDecimal?,
-    @SerializedName("timestamp") var timestamp: Long?
+    @SerializedName("trade_volume_usd") var tradeVolumeUsd: BigDecimal?
 )

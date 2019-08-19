@@ -3,7 +3,7 @@ package br.pprojects.blockchainapp.data.model.remote
 import br.pprojects.blockchainapp.data.model.local.PointValue
 import com.google.gson.annotations.SerializedName
 
-data class ChartResponse(
+data class TransactionsPerSecondChartResponse(
     @SerializedName("status") var status: String? = null,
     @SerializedName("name") var name: String? = null,
     @SerializedName("unit") var unit: String? = null,
