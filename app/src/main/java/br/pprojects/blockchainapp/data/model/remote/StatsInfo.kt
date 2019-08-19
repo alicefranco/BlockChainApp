@@ -5,13 +5,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.math.BigDecimal
-import java.sql.Timestamp
 
 @Entity
-data class StatsInfo (
+data class StatsInfo(
     @PrimaryKey @ColumnInfo(name = "timestamp")
-    @SerializedName("timestamp") var timestamp: Long?,
-    @SerializedName("market_price_usd") var marketPriceUsd: BigDecimal?,
+    @SerializedName("timestamp") var timestamp: Long,
+    @SerializedName("market_price_usd") var marketPriceUsd: BigDecimal,
     @SerializedName("hash_rate") var hashRate: BigDecimal?,
     @SerializedName("total_fees_btc") var totalFeesBtc: BigDecimal?,
     @SerializedName("n_btc_mined") var nBtcMined: BigDecimal?,

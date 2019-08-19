@@ -15,8 +15,7 @@ interface WebServiceRepository {
     suspend fun getPoolInfo(timespan: String): ResultAPI<PoolInfo>
 }
 
-
-class WebServiceRepositoryImpl(private val apiService: ApiService): WebServiceRepository, KoinComponent {
+class WebServiceRepositoryImpl(private val apiService: ApiService) : WebServiceRepository, KoinComponent {
     override suspend fun listTransactionsPerSecondChartInfo(timespan: String, start: String?): ResultAPI<TransactionsPerSecondChartResponse> {
         val response = safeCall { apiService.listTransactionsPerSecondChartInfo(timespan, start) }
         return response.result()
@@ -31,5 +30,4 @@ class WebServiceRepositoryImpl(private val apiService: ApiService): WebServiceRe
         val response = safeCall { apiService.getPoolInfo(timespan) }
         return response.result()
     }
-
 }

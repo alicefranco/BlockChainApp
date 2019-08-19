@@ -5,7 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 
 class ClientInterceptor {
     fun createInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().apply{
+        return HttpLoggingInterceptor().apply {
             level = (HttpLoggingInterceptor.Level.BODY)
         }
     }
@@ -13,7 +13,7 @@ class ClientInterceptor {
     fun createClient(): OkHttpClient {
         return OkHttpClient()
             .newBuilder()
-            .addInterceptor (createInterceptor())
+            .addInterceptor(createInterceptor())
             .build()
     }
 }

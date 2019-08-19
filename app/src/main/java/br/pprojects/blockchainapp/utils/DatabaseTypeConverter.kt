@@ -13,6 +13,6 @@ class DatabaseTypeConverter {
 
     @TypeConverter
     fun toLong(value: BigDecimal?): Long? {
-        return  value?.toLong()
+        return value?.toLong()
     }
 }

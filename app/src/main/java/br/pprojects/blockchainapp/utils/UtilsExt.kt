@@ -1,8 +1,8 @@
 package br.pprojects.blockchainapp.utils
 
-import androidx.lifecycle.ViewModel
 import java.sql.Timestamp
-import java.util.*
+import java.util.Timer
+import java.util.TimerTask
 
 fun Long?.getDate() = this?.let {
     val timestamp = Timestamp(it)
@@ -23,4 +23,3 @@ fun scheduleTask(delay: Long, task: () -> Unit) {
     }
     timer.schedule(execution, 0, delay)
 }
-

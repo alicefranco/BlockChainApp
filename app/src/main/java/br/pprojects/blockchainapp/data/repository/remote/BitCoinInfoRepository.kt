@@ -14,20 +14,20 @@ interface BitCoinInfoRepository {
 class BitcoinInfoRepositoryImpl(
     private val databaseRepository: DatabaseRepository,
     private val webServiceRepository: WebServiceRepository
-): BitCoinInfoRepository, KoinComponent {
+) : BitCoinInfoRepository, KoinComponent {
     override suspend fun getStatsInfo(): LiveData<StatsInfo> {
         val data: MutableLiveData<StatsInfo> = MutableLiveData()
         val response = getStatsInfoFromWebService()
-        when(response) {
+        when (response) {
             is ResultAPI.Success -> {
                 data.postValue(response.data)
-                //insertStatsInfo(response.data)
+                // insertStatsInfo(response.data)
             }
             is ResultAPI.InternalError -> {
-                //todo error
+                // todo error
             }
             is ResultAPI.Error -> {
-                //todo error
+                // todo error
             }
         }
         return data
@@ -42,11 +42,10 @@ class BitcoinInfoRepositoryImpl(
     }
 
     suspend fun getAllStatsInfo(): LiveData<List<StatsInfo>> {
-       return databaseRepository.getAll()
+        return databaseRepository.getAll()
     }
 
     suspend fun insertStatsInfo(statsInfo: StatsInfo) {
         return databaseRepository.insert(statsInfo)
     }
-
 }

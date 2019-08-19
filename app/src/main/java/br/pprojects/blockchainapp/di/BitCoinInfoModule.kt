@@ -7,7 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val bitCoinInfoModule = module {
-    single<BitCoinInfoRepository>{ BitcoinInfoRepositoryImpl(get(), get()) }
+    single<BitCoinInfoRepository> { BitcoinInfoRepositoryImpl(get(), get()) }
 
-    viewModel { BitcoinPricesViewModel(get()) }
+    viewModel { BitcoinPricesViewModel(get(), get()) }
 }

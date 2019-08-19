@@ -8,12 +8,14 @@ import br.pprojects.blockchainapp.utils.Constants
 import org.koin.dsl.module
 
 val configModule = module {
-    single<AppDatabase>{
+    single<AppDatabase> {
         Room.databaseBuilder(
             get(),
             AppDatabase::class.java,
             Constants.DATABASE_NAME
-        ).build()
+        ).fallbackToDestructiveMigration()
+        .allowMainThreadQueries()
+        .build()
     }
 
     single { get<AppDatabase>().bitCoinInfoDao() }
